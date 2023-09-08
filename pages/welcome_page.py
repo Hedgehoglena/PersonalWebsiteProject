@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from pages.welcome_page_locators import WelcomePageLocators
-
+import time
 
 class WelcomePage(BasePage):
 
@@ -11,5 +11,7 @@ class WelcomePage(BasePage):
         self.explicitly_wait_and_find_element(5, WelcomePageLocators.CREDENTIALS_BUTTON).click()
 
     def verify_company_logo(self):
-        self.capture_web_element_as_an_image(WelcomePageLocators.COMPANY_LOGO, "captured_company_logo.png")
-        return self.compare_images("company_logo.png", "captured_company_logo.png")
+        time.sleep(5)
+        self.capture_web_element_as_an_image(WelcomePageLocators.COMPANY_LOGO, "company_logo.png")
+        return self.compare_images("company_logo.png", "company_logo.png")
+

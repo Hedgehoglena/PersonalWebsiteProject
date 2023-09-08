@@ -33,3 +33,6 @@ class BasePage:
             percentage_diff = 0  # Images are identical
 
         return percentage_diff
+
+    def maximize_browser(self):
+        self.driver.maximize_window()

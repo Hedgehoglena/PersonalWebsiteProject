@@ -48,6 +48,7 @@ class TestContact:
 
     def test_image_comparison(self, driver):
         welcome_page = WelcomePage(driver)
+        welcome_page.maximize_browser()
         welcome_page.navigate_to(TEST_SITE_URL)
         percentage_diff = welcome_page.verify_company_logo()
         assert percentage_diff <= MAX_ALLOWED_DIFF_PERCENTAGE, f"Images are different by {percentage_diff}%"
